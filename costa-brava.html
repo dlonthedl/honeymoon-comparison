@@ -22,7 +22,6 @@
     color: var(--text);
     line-height: 1.7;
   }
-  /* Map section */
   .map-section { position: relative; }
   #map { height: 55vh; min-height: 400px; width: 100%; border-bottom: 3px solid var(--accent); }
   .map-header {
@@ -33,8 +32,6 @@
   }
   .map-header h1 { font-size: 1.6rem; }
   .map-header p { opacity: 0.8; font-size: 0.9rem; }
-
-  /* Content section */
   .content {
     max-width: 960px;
     margin: 0 auto;
@@ -48,40 +45,23 @@
   strong { color: var(--text); }
   blockquote {
     background: #fef3c7; border-left: 4px solid #d97706;
-    padding: 1rem 1.25rem; margin: 1rem 0 1.5rem;
-    border-radius: 0 8px 8px 0; font-size: 0.95rem;
+    padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;
   }
-  blockquote p { margin-bottom: 0.5rem; }
-  blockquote p:last-child { margin-bottom: 0; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-  table {
-    width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem;
-    font-size: 0.9rem; background: var(--card-bg); border-radius: 8px;
-    overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-  }
-  thead { background: linear-gradient(135deg, #1e293b, #334155); color: #fff; }
-  th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
-  td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: #f5f5f4; }
-  ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem; font-size: 0.95rem; }
+  th, td { border: 1px solid var(--border); padding: 0.6rem 0.9rem; text-align: left; }
+  th { background: #fce7f3; color: var(--accent); font-weight: 600; }
+  tr:nth-child(even) { background: #faf5ff; }
+  ul, ol { margin: 0.5rem 0 1.5rem 1.5rem; }
   li { margin-bottom: 0.4rem; }
-  code { background: #f5f5f4; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
-  pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
-  pre code { background: none; padding: 0; color: inherit; }
+  code { background: #f5f5f4; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+  pre { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+  pre code { background: none; color: inherit; padding: 0; }
+  hr { border: none; border-top: 2px solid var(--border); margin: 3rem 0; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  em:last-child { display: block; text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-  @media (max-width: 768px) {
-    .content { padding: 1rem; }
-    table { font-size: 0.8rem; display: block; overflow-x: auto; }
-    th, td { padding: 0.5rem 0.6rem; }
-    #map { height: 40vh; min-height: 300px; }
-  }
-  @media print {
-    .map-section { display: none; }
-    .content { max-width: 100%; padding: 0; }
-  }
+  .legend { position: absolute; bottom: 20px; left: 20px; z-index: 1000; background: rgba(255,255,255,0.95); padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .legend-item { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; }
 </style>
 </head>
 <body>
@@ -89,14 +69,20 @@
 <div class="map-section">
   <div class="map-header">
     <h1>🚗 Costa Brava Road Trip</h1>
-    <p>Barcelona → Tossa de Mar → Baix Empordà → Girona | July 23–30, 2026</p>
+    <p>Barcelona → Tossa de Mar → Baix Empordà → Cadaqués → Girona | July 23–31, 2026</p>
   </div>
   <div id="map"></div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#ec4899"></div> Hotels</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Towns</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Coves & Beaches</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#6b7280"></div> Airport</div>
+  </div>
 </div>
 
 <div class="content">
 <h1>🚗 Costa Brava Honeymoon Road Trip</h1>
-<p><strong>Dates:</strong> July 23–30, 2026 (7 nights) | <strong>Route:</strong> Barcelona → up the Costa Brava coast → Girona | <strong>Style:</strong> Beach towns, great food, exploring, relaxation</p>
+<p><strong>Dates:</strong> July 23–31, 2026 (8 nights) | <strong>Route:</strong> Barcelona → up the Costa Brava coast → Cadaqués → Girona | <strong>Style:</strong> Beach towns, great food, exploring, relaxation</p>
 <hr />
 <h2>✈️ Getting There</h2>
 <table>
@@ -132,10 +118,10 @@
 <p><strong>Rental car:</strong> Pick up at BCN airport or in Barcelona city (if staying 1-2 nights first). Drive north up the coast.</p>
 <hr />
 <h2>🗺️ The Route (South → North)</h2>
-<pre><code>Barcelona → Tossa de Mar (1 hr) → Lloret de Mar (15 min) → Calella de Palafrugell / Begur (45 min)
-→ Mas de Torrent / Pals area (20 min) → Girona (30 min) → Barcelona airport (1 hr)
+<pre><code>Barcelona → Tossa de Mar (1 hr) → Calella de Palafrugell / Begur (45 min)
+→ Mas de Torrent / Pals area (20 min) → Cadaqués (1 hr 15 min) → Girona (1 hr) → Barcelona airport (1 hr)
 </code></pre>
-<p>Total driving: ~2.5 hrs end-to-end (spread over the week with scenic coastal roads)</p>
+<p>Total driving: ~4 hrs end-to-end (spread over the week with scenic coastal roads)</p>
 <hr />
 <h2>🏨 Your Hotels</h2>
 <h3>1. Barcelona — First 1-2 nights (arrival/city exploring)</h3>
@@ -308,7 +294,52 @@
 - Tamariu (25 min) — tiny turquoise cove, lunch spot
 - Private boat excursions, cooking classes, wine tasting all arranged by hotel</p>
 <hr />
-<h3>5. Hotel Palau Fugit — Girona</h3>
+<h3>5. Hotel Villa Salvador — Cadaqués</h3>
+<p><strong>Adults-only boutique with Mediterranean charm</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td>Edge of Cadaqués village, near two quiet beaches; 5-min walk to centre</td>
+</tr>
+<tr>
+<td><strong>Rooms</strong></td>
+<td>Stylish rooms with garden or sea views; private terraces; contemporary Mediterranean design</td>
+</tr>
+<tr>
+<td><strong>Dining</strong></td>
+<td>Restaurant with local Catalan cuisine; terrace bar overlooking the gardens</td>
+</tr>
+<tr>
+<td><strong>Pool &amp; Spa</strong></td>
+<td>Saltwater pool; jacuzzi; wellness centre with treatments</td>
+</tr>
+<tr>
+<td><strong>Price (July)</strong></td>
+<td>€250–450/night</td>
+</tr>
+<tr>
+<td><strong>Rating</strong></td>
+<td>9.0+/10 on booking platforms; "romantic, peaceful, perfect for couples"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why Cadaqués?</strong>
+- Salvador Dalí's beloved village — his house-museum at Portlligat is a 15-min walk
+- Cap de Creus Natural Park — Spain's easternmost point; wild, dramatic coastline for hiking
+- Whitewashed village with art galleries, seafood restaurants, and bohemian atmosphere
+- Far fewer tourists than southern Costa Brava — feels genuinely special
+- Stunning sunset from the Cap de Creus lighthouse
+- The drive in (winding mountain road) is an experience itself — spectacular views</p>
+<p><em>Alternatives: Boutique Hotel Villa Gala (art-inspired, sea views, €300–500), Arrels Hotel (adults-only, secluded, oceanfront)</em></p>
+<hr />
+<h3>6. Hotel Palau Fugit — Girona</h3>
 <p><strong>Boutique palace hotel in the Old Town</strong></p>
 <table>
 <thead>
@@ -351,7 +382,7 @@
 - Excellent food market, cafés, independent shops
 - Easy drive back to Barcelona airport (1 hr) for departure</p>
 <hr />
-<h2>📅 Suggested 7-Night Itinerary</h2>
+<h2>📅 Suggested 8-Night Itinerary</h2>
 <h3>Day 1 — Wednesday, July 23</h3>
 <p><strong>✈️ Fly JFK → Barcelona</strong>
 - Depart JFK ~5:10 PM on AA66
@@ -399,19 +430,31 @@
 - Evening: Dinner at Mas de Torrent's gourmet restaurant; stargazing from the terrace
 - 🏨 <strong>Stay: Mas de Torrent</strong></p>
 <h3>Day 8 — Wednesday, July 30</h3>
-<p><strong>🚗 Drive to Girona (30 min) — final night</strong>
-- Morning: Sleep in; leisurely checkout from Mas de Torrent
-- Late morning: Drive to Girona; check into Hotel Palau Fugit
-- Afternoon: Explore Girona — cathedral, Jewish Quarter, colourful houses on the Onyar river, Plaça de la Independència
-- Evening: Final celebration dinner — try for El Celler de Can Roca (book months ahead!) or one of Girona's many excellent restaurants (Rocambolesc for Roca brothers' ice cream!)
-- 🏨 <strong>Stay: Hotel Palau Fugit, Girona</strong></p>
+<p><strong>🚗 Drive to Cadaqués (1 hr 15 min) — Dalí's paradise</strong>
+- Morning: Leisurely checkout from Mas de Torrent
+- Drive north through the Empordà wine country; optional stop at Figueres for the Dalí Theatre-Museum (1-2 hrs — surreal &amp; unforgettable)
+- Afternoon: Arrive Cadaqués; check into Hotel Villa Salvador; cool off in the saltwater pool
+- Late afternoon: Walk into the whitewashed village; wander art galleries, browse the harbour
+- Evening: Seafood dinner on the waterfront (try Casa Anita or Compartir — from the El Bulli chefs!)
+- 🏨 <strong>Stay: Hotel Villa Salvador, Cadaqués</strong></p>
 <h3>Day 9 — Thursday, July 31</h3>
-<p><strong>✈️ Fly home</strong>
-- Morning: Breakfast at Palau Fugit; browse Girona's morning market
-- Drive to Barcelona airport (1 hr) — return rental car
-- Fly home (check AA return flights — likely afternoon departure)</p>
+<p><strong>🏖️ Cap de Creus &amp; Cadaqués exploration</strong>
+- Morning: Visit Salvador Dalí's house-museum at Portlligat (book tickets in advance! 15-min walk from village)
+- Late morning: Drive or hike to Cap de Creus lighthouse — Spain's easternmost point; wild, lunar landscapes
+- Midday: Swim at one of the secluded coves near Cap de Creus (Cala Fredosa, Cala Jugadora)
+- Afternoon: Back to hotel; pool &amp; spa; or walk to Platja Gran for a last swim
+- Evening: Farewell sunset from the terrace; special dinner in the village
+- 🏨 <strong>Stay: Hotel Villa Salvador, Cadaqués</strong></p>
+<p><em>Note: If you'd prefer 1 night in Cadaqués and 1 in Girona (instead of 2 in Cadaqués), you can drive to Girona on Day 9 afternoon and spend the final evening there.</em></p>
+<h3>Day 10 — Friday, August 1</h3>
+<p><strong>🚗 Drive to Girona (1 hr) &amp; fly home</strong>
+- Morning: Breakfast at Villa Salvador; last walk along the harbour
+- Drive to Girona; stop for a stroll through the Old Town — colourful Onyar river houses, cathedral, Jewish Quarter
+- Lunch in Girona (Plaça de la Independència or the food market)
+- Afternoon: Drive to Barcelona airport (1 hr from Girona); return rental car
+- Fly home (check AA return flights — likely afternoon/evening departure)</p>
 <hr />
-<h2>💰 Budget Estimate (7 nights)</h2>
+<h2>💰 Budget Estimate (8 nights)</h2>
 <table>
 <thead>
 <tr>
@@ -453,22 +496,27 @@
 </tr>
 <tr>
 <td>7</td>
-<td>Hotel Palau Fugit, Girona</td>
+<td>Hotel Villa Salvador, Cadaqués</td>
+<td>€350</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Hotel Villa Salvador, Cadaqués</td>
 <td>€350</td>
 </tr>
 <tr>
 <td></td>
 <td><strong>Total accommodation</strong></td>
-<td><strong>~€2,910</strong></td>
+<td><strong>~€3,260</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Other costs:</strong>
-- Rental car (7 days): ~€300–500
-- Gas: ~€100
-- Dining out (7 dinners): ~€500–800
-- Activities/entrance fees: ~€100–200</p>
-<p><strong>Estimated total trip (excl. flights): ~€3,900–4,400</strong></p>
+- Rental car (8 days): ~€350–550
+- Gas: ~€120
+- Dining out (8 dinners): ~€600–900
+- Activities/entrance fees (Dalí museums, etc.): ~€150–250</p>
+<p><strong>Estimated total trip (excl. flights): ~€4,500–5,000</strong></p>
 <hr />
 <h2>🤔 Notes &amp; Alternatives</h2>
 <h3>On Meliá Lloret de Mar</h3>
@@ -507,8 +555,6 @@
 <li><strong>Cava</strong> — Catalan sparkling wine; cheaper and often better than champagne</li>
 <li><strong>Suquet de peix</strong> — Classic Costa Brava fish stew</li>
 </ul>
-<hr />
-<p><em>Last updated: July 2026</em></p>
 <hr />
 <h2>🗺️ Local Tips &amp; Hidden Gems</h2>
 <p><em>Curated from local travel guides</em></p>
@@ -551,78 +597,83 @@
 </ul>
 <hr />
 <p><em>References: <a href="https://www.bontraveler.com/where-to-visit-in-costa-brava-spain/">Bon Traveler — Where to Visit in Costa Brava</a> | <a href="https://www.followingmycompass.com/costa-brava-travel-guide/">Following My Compass — Costa Brava Travel Guide</a></em></p>
+<hr />
+<p><em>Last updated: July 2026</em></p>
 </div>
 
 <script>
-const map = L.map('map').setView([41.85, 2.95], 9);
+var map = L.map('map').setView([41.85, 2.85], 9);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors', maxZoom: 18
+  attribution: '© OpenStreetMap contributors',
+  maxZoom: 18
 }).addTo(map);
 
-function makeIcon(color, size) {
+function icon(color, size) {
   return L.divIcon({
-    className: 'custom-marker',
-    html: `<div style="background:${color};width:${size}px;height:${size}px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>`,
-    iconSize: [size, size], iconAnchor: [size/2, size/2], popupAnchor: [0, -size/2]
+    html: '<div style="background:'+color+';width:'+size+'px;height:'+size+'px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>',
+    iconSize: [size, size],
+    iconAnchor: [size/2, size/2],
+    className: ''
   });
 }
-const hotelIcon = makeIcon('#be185d', 20);
-const townIcon = makeIcon('#2563eb', 14);
-const coveIcon = makeIcon('#059669', 12);
-const airportIcon = makeIcon('#6b7280', 16);
 
-const hotels = [
-  { name: "Hotel Serras — Barcelona", detail: "Nights 1-2 | Waterfront boutique, rooftop pool", lat: 41.3784, lng: 2.1816 },
-  { name: "Elisabeth by the Sea — Tossa de Mar", detail: "Nights 3-4 | Beachfront, medieval Old Town", lat: 41.7193, lng: 2.9313 },
-  { name: "Mas de Torrent — Baix Empordà", detail: "Nights 5-6 | Relais & Châteaux countryside luxury", lat: 41.9700, lng: 3.1300 },
-  { name: "Hotel Palau Fugit — Girona", detail: "Night 7 | Baroque palace, Jewish Quarter", lat: 41.9879, lng: 2.8247 }
+// Hotels (pink)
+var hotels = [
+  [41.3784, 2.1816, "Hotel Serras — Barcelona", "Nights 1-2"],
+  [41.7193, 2.9313, "Elisabeth by the Sea — Tossa de Mar", "Nights 3-4"],
+  [41.9700, 3.1300, "Mas de Torrent — Baix Empordà", "Nights 5-6"],
+  [42.2885, 3.2765, "Hotel Villa Salvador — Cadaqués", "Nights 7-8"],
+  [41.9879, 2.8247, "Hotel Palau Fugit — Girona", "Stopover on departure day"]
 ];
-const towns = [
-  { name: "Calella de Palafrugell", detail: "White-washed fishing village; Camí de Ronda", lat: 41.8880, lng: 3.1870 },
-  { name: "Begur", detail: "Hilltop castle town; Sa Tuna & Aiguablava coves", lat: 41.9540, lng: 3.2070 },
-  { name: "Pals", detail: "Medieval walled village", lat: 41.9710, lng: 3.1480 },
-  { name: "Peratallada", detail: "Romantic medieval dinner village", lat: 41.9850, lng: 3.0950 },
-  { name: "Sant Feliu de Guíxols", detail: "Seaside town; near S'Agaró", lat: 41.7830, lng: 3.0290 },
-  { name: "Cadaqués", detail: "Dalí's whitewashed village (optional day trip)", lat: 42.2885, lng: 3.2765 },
-  { name: "Figueres", detail: "Dalí Theatre-Museum", lat: 42.2660, lng: 2.9620 }
+hotels.forEach(function(h) {
+  L.marker([h[0], h[1]], {icon: icon('#ec4899', 16)}).addTo(map)
+    .bindPopup('<strong>'+h[2]+'</strong><br>'+h[3]);
+});
+
+// Towns (blue)
+var towns = [
+  [41.9540, 3.2070, "Begur", "Hilltop town, castle ruins, gateway to best coves"],
+  [41.8880, 3.1870, "Calella de Palafrugell", "White-washed fishing village"],
+  [41.9900, 3.1600, "Pals", "Medieval hilltop village"],
+  [41.9750, 3.1050, "Peratallada", "Walled medieval village — romantic dinners"],
+  [42.2670, 2.9600, "Figueres", "Dalí Theatre-Museum"],
+  [41.6956, 2.8455, "Lloret de Mar", "Beach resort town (drive-through)"]
 ];
-const coves = [
-  { name: "Sa Tuna", detail: "Turquoise cove below Begur — top pick!", lat: 41.9620, lng: 3.2210 },
-  { name: "Tamariu", detail: "Tiny perfect cove; lunch spot", lat: 41.9180, lng: 3.2100 },
-  { name: "Aiguablava", detail: "Crystal-clear turquoise bay", lat: 41.9350, lng: 3.2170 },
-  { name: "Platja Fonda", detail: "Steep stairs, crystal water, secluded", lat: 41.9500, lng: 3.2150 },
-  { name: "Cala Pola", detail: "30-min hike from Tossa; dramatic cliffs", lat: 41.7320, lng: 2.9490 },
-  { name: "Platja Gran (Tossa)", detail: "Main beach below the castle walls", lat: 41.7175, lng: 2.9330 },
-  { name: "Barceloneta Beach", detail: "Barcelona city beach", lat: 41.3780, lng: 2.1920 },
-  { name: "El Golfet (Calella)", detail: "Small cove, great snorkeling", lat: 41.8840, lng: 3.1910 }
+towns.forEach(function(t) {
+  L.marker([t[0], t[1]], {icon: icon('#3b82f6', 12)}).addTo(map)
+    .bindPopup('<strong>'+t[2]+'</strong><br>'+t[3]);
+});
+
+// Coves (green)
+var coves = [
+  [41.7350, 2.9100, "Cala Pola", "Secluded cove — 30min walk from Tossa"],
+  [41.9620, 3.2210, "Sa Tuna", "Crystal-clear fishing cove — top pick!"],
+  [41.9420, 3.2150, "Aiguablava", "Turquoise bay — most photogenic"],
+  [41.9050, 3.1900, "Tamariu", "Tiny cove, great lunch spot"],
+  [42.3200, 3.3100, "Cap de Creus", "Spain's easternmost point — wild coastline"],
+  [42.2950, 3.2850, "Portlligat", "Dalí's house-museum"]
 ];
+coves.forEach(function(c) {
+  L.marker([c[0], c[1]], {icon: icon('#10b981', 10)}).addTo(map)
+    .bindPopup('<strong>'+c[2]+'</strong><br>'+c[3]);
+});
 
-L.marker([41.2971, 2.0785], {icon: airportIcon}).addTo(map).bindPopup("<strong>✈️ BCN Airport</strong><br>Start & end");
-hotels.forEach(h => L.marker([h.lat, h.lng], {icon: hotelIcon}).addTo(map).bindPopup(`<strong>🏨 ${h.name}</strong><br>${h.detail}`));
-towns.forEach(t => L.marker([t.lat, t.lng], {icon: townIcon}).addTo(map).bindPopup(`<strong>🏘️ ${t.name}</strong><br>${t.detail}`));
-coves.forEach(c => L.marker([c.lat, c.lng], {icon: coveIcon}).addTo(map).bindPopup(`<strong>🏖️ ${c.name}</strong><br>${c.detail}`));
+// Airport (gray)
+L.marker([41.2971, 2.0785], {icon: icon('#6b7280', 14)}).addTo(map)
+  .bindPopup('<strong>BCN Airport</strong><br>Start & end point');
 
-L.polyline([
-  [41.2971, 2.0785], [41.3784, 2.1816], [41.7193, 2.9313],
-  [41.7830, 3.0290], [41.8880, 3.1870], [41.9540, 3.2070],
-  [41.9700, 3.1300], [41.9879, 2.8247], [41.2971, 2.0785]
-], { color: '#be185d', weight: 3, opacity: 0.7, dashArray: '8, 8' }).addTo(map);
-
-const allCoords = [...hotels.map(h=>[h.lat,h.lng]),...towns.map(t=>[t.lat,t.lng]),...coves.map(c=>[c.lat,c.lng]),[41.2971,2.0785]];
-map.fitBounds(allCoords, { padding: [30, 30] });
-
-const legend = L.control({position: 'bottomright'});
-legend.onAdd = function() {
-  const div = L.DomUtil.create('div');
-  div.style.cssText = 'background:#fff;padding:10px 14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.15);font-size:13px;line-height:1.8;';
-  div.innerHTML = `<strong>Legend</strong><br>
-    <span style="display:inline-block;width:12px;height:12px;background:#be185d;border-radius:50%;margin-right:6px;vertical-align:middle;"></span> Hotels<br>
-    <span style="display:inline-block;width:12px;height:12px;background:#2563eb;border-radius:50%;margin-right:6px;vertical-align:middle;"></span> Towns<br>
-    <span style="display:inline-block;width:12px;height:12px;background:#059669;border-radius:50%;margin-right:6px;vertical-align:middle;"></span> Beaches & coves<br>
-    <span style="color:#be185d;">- - -</span> Driving route`;
-  return div;
-};
-legend.addTo(map);
+// Route line
+var route = [
+  [41.2971, 2.0785], // airport
+  [41.3784, 2.1816], // Barcelona
+  [41.7193, 2.9313], // Tossa
+  [41.8880, 3.1870], // Calella
+  [41.9700, 3.1300], // Mas de Torrent
+  [42.2885, 3.2765], // Cadaqués
+  [41.9879, 2.8247], // Girona
+  [41.2971, 2.0785]  // airport
+];
+L.polyline(route, {color: '#ec4899', weight: 3, dashArray: '8,8', opacity: 0.7}).addTo(map);
 </script>
 </body>
 </html>
