@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏖️ Honeymoon Hotel Comparison — Balearic Islands</title>
+<style>
+  :root {
+    --mallorca: #2563eb;
+    --menorca: #059669;
+    --ibiza: #d97706;
+    --bg: #fafaf9;
+    --card-bg: #fff;
+    --text: #1c1917;
+    --muted: #78716c;
+    --border: #e7e5e4;
+    --accent: #be185d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  h1 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--border);
+  }
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+  /* Island section headers */
+  h2:has(+ blockquote) {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border-bottom: none;
+  }
+
+  p { margin-bottom: 1rem; }
+  strong { color: var(--text); }
+
+  blockquote {
+    background: #fef3c7;
+    border-left: 4px solid var(--ibiza);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0 1.5rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+  }
+  blockquote p { margin-bottom: 0.5rem; }
+  blockquote p:last-child { margin-bottom: 0; }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.9rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  thead {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: #fff;
+  }
+  th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #f5f5f4; }
+
+  /* Empty separator rows in comparison table */
+  td:empty { padding: 0.2rem; background: var(--bg); }
+
+  /* Lists */
+  ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  li {
+    margin-bottom: 0.4rem;
+  }
+
+  /* Star ratings */
+  .star { color: #f59e0b; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    body { padding: 1rem; }
+    h1 { font-size: 1.5rem; }
+    table { font-size: 0.8rem; display: block; overflow-x: auto; white-space: nowrap; }
+    th, td { padding: 0.5rem 0.6rem; }
+  }
+
+  /* Print */
+  @media print {
+    body { max-width: 100%; padding: 0; }
+    h2, h3 { page-break-after: avoid; }
+    table { page-break-inside: avoid; }
+  }
+
+  /* Hotel cards styling */
+  h3 + p {
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  /* Footer */
+  em:last-child {
+    display: block;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+<h1>🚗 Costa Brava Honeymoon Road Trip</h1>
+<p><strong>Dates:</strong> July 23–30, 2026 (7 nights) | <strong>Route:</strong> Barcelona → up the Costa Brava coast → Girona | <strong>Style:</strong> Beach towns, great food, exploring, relaxation</p>
+<hr />
+<h2>✈️ Getting There</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flight</strong></td>
+<td>American Airlines AA66 — JFK → Barcelona</td>
+</tr>
+<tr>
+<td><strong>Departs</strong></td>
+<td>~5:10 PM ET</td>
+</tr>
+<tr>
+<td><strong>Arrives</strong></td>
+<td>~6:45 AM next day (Barcelona T1)</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>7 hrs 35 min (overnight — arrive refreshed!)</td>
+</tr>
+<tr>
+<td><strong>Aircraft</strong></td>
+<td>Boeing 777-200ER</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rental car:</strong> Pick up at BCN airport or in Barcelona city (if staying 1-2 nights first). Drive north up the coast.</p>
+<hr />
+<h2>🗺️ The Route (South → North)</h2>
+<pre><code>Barcelona → Tossa de Mar (1 hr) → Lloret de Mar (15 min) → Calella de Palafrugell / Begur (45 min)
+→ Mas de Torrent / Pals area (20 min) → Girona (30 min) → Barcelona airport (1 hr)
+</code></pre>
+<p>Total driving: ~2.5 hrs end-to-end (spread over the week with scenic coastal roads)</p>
+<hr />
+<h2>🏨 Your Hotels</h2>
+<h3>1. Barcelona — First 1-2 nights (arrival/city exploring)</h3>
+<p><strong>Suggested:</strong> Hotel Serras Barcelona or Mercer Hotel Barcelona</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Hotel Serras</th>
+<th>Mercer Hotel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td>Waterfront, Port Vell / Gothic Quarter edge</td>
+<td>Deep Gothic Quarter, quiet medieval street</td>
+</tr>
+<tr>
+<td><strong>Style</strong></td>
+<td>Contemporary boutique; rooftop pool with marina views</td>
+<td>Medieval palace; plunge pool in courtyard</td>
+</tr>
+<tr>
+<td><strong>Price (July)</strong></td>
+<td>€350–500/night</td>
+<td>€400–600/night</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Sea views + city access</td>
+<td>History buffs + total intimacy</td>
+</tr>
+<tr>
+<td><strong>Dining</strong></td>
+<td>Rooftop restaurant + bar</td>
+<td>Courtyard restaurant</td>
+</tr>
+</tbody>
+</table>
+<p><em>Or: Wittmore Hotel (adults-only, hidden Gothic Quarter gem, €300–450)</em></p>
+<hr />
+<h3>2. Elisabeth by the Sea — Tossa de Mar</h3>
+<p><strong>Beachfront boutique, Old Town location</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td>Right on the beach next to Tossa's medieval walled Old Town (Vila Vella)</td>
+</tr>
+<tr>
+<td><strong>Rooms</strong></td>
+<td>Elegant rooms; sea-view &amp; balcony options; modern comfort</td>
+</tr>
+<tr>
+<td><strong>Dining</strong></td>
+<td>Good breakfast included; rooftop area</td>
+</tr>
+<tr>
+<td><strong>Pool</strong></td>
+<td>Rooftop pool with panoramic views</td>
+</tr>
+<tr>
+<td><strong>Price (July)</strong></td>
+<td>€180–320/night</td>
+</tr>
+<tr>
+<td><strong>Rating</strong></td>
+<td>Strong 4-star; praised for location, breakfast, staff</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why Tossa de Mar?</strong>
+- One of the most beautiful towns on the Costa Brava — medieval castle walls above a sandy beach
+- Charming cobblestone Old Town with restaurants, galleries, and bars
+- Crystal-clear coves nearby (Cala Pola, Cala Giverola — hike or drive)
+- Romantic evening strolls along the castle walls at sunset</p>
+<hr />
+<h3>3. Meliá Lloret de Mar — Lloret de Mar</h3>
+<p><strong>Modern resort with pools and spa</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td>Quiet area of Lloret, 10-15 min walk to main beach</td>
+</tr>
+<tr>
+<td><strong>Rooms</strong></td>
+<td>Modern, spacious; "The Level" premium floor with exclusive services</td>
+</tr>
+<tr>
+<td><strong>Dining</strong></td>
+<td>Buffet breakfast; poolside dining; restaurants in town</td>
+</tr>
+<tr>
+<td><strong>Pool &amp; Spa</strong></td>
+<td>2 pools, sun terrace, spa, gym</td>
+</tr>
+<tr>
+<td><strong>Price (July)</strong></td>
+<td>€90–150/night</td>
+</tr>
+<tr>
+<td><strong>Rating</strong></td>
+<td>4/5; great value; modern and well-maintained</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why Lloret de Mar?</strong>
+- Lively beach town — longest beach on this stretch of coast
+- Good base for exploring nearby coves (Santa Cristina beach is gorgeous)
+- Water sports, nightlife options, beach clubs
+- Gardens of Santa Clotilde (clifftop gardens with sea views)</p>
+<p><strong>⚠️ Honest note:</strong> Lloret is the most "touristy" and party-oriented town on the Costa Brava. The Meliá is in a quieter spot, but the town itself is less romantic/upscale than Tossa or the northern towns. Consider whether you want this stop or prefer more time in Tossa/north.</p>
+<hr />
+<h3>4. Mas de Torrent Hotel &amp; Spa — Torrent (Baix Empordà)</h3>
+<p><strong>5-star Relais &amp; Châteaux countryside luxury</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td>Inland Baix Empordà (20 min from coast); between medieval villages of Pals &amp; Peratallada</td>
+</tr>
+<tr>
+<td><strong>Rooms</strong></td>
+<td>39 rooms/suites in converted 18th-century masía; some with private pools</td>
+</tr>
+<tr>
+<td><strong>Dining</strong></td>
+<td>Gourmet restaurant; Catalan cuisine with garden produce; excellent wine list</td>
+</tr>
+<tr>
+<td><strong>Pool &amp; Spa</strong></td>
+<td>Large outdoor pool; full luxury spa; tennis &amp; padel; bike rental</td>
+</tr>
+<tr>
+<td><strong>Price (July)</strong></td>
+<td>€465–755/night (suites with pools up to €1,145)</td>
+</tr>
+<tr>
+<td><strong>Rating</strong></td>
+<td>4.6–4.7/5; "unforgettable luxury experience"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why Mas de Torrent / Baix Empordà?</strong>
+- The "golden zone" of Costa Brava — medieval villages, vineyards, stunning coves all within 20 min
+- Pals (10 min) — perfectly preserved medieval village, rice paddies, great restaurants
+- Peratallada (10 min) — walled medieval village, romantic dinner spot
+- Calella de Palafrugell (20 min) — white-washed fishing village, best coves on the coast
+- Begur (20 min) — hilltop town with castle ruins; Sa Tuna &amp; Aiguablava coves below
+- Tamariu (25 min) — tiny turquoise cove, lunch spot
+- Private boat excursions, cooking classes, wine tasting all arranged by hotel</p>
+<hr />
+<h3>5. Hotel Palau Fugit — Girona</h3>
+<p><strong>Boutique palace hotel in the Old Town</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td>Historic Jewish Quarter (El Call) of Girona; steps from cathedral, river, restaurants</td>
+</tr>
+<tr>
+<td><strong>Rooms</strong></td>
+<td>Renovated 18th-century baroque palace; modern rooms with courtyard/garden views</td>
+</tr>
+<tr>
+<td><strong>Dining</strong></td>
+<td>CASA HERAS restaurant (Catalan/Spanish); courtyard café; rooftop terrace</td>
+</tr>
+<tr>
+<td><strong>Pool &amp; Spa</strong></td>
+<td>Indoor &amp; outdoor pools; spa with treatments</td>
+</tr>
+<tr>
+<td><strong>Price (July)</strong></td>
+<td>€250–500/night</td>
+</tr>
+<tr>
+<td><strong>Rating</strong></td>
+<td>4.5/5 TripAdvisor; 9.3/10 booking sites</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why Girona?</strong>
+- One of Spain's most beautiful cities — colourful river houses, medieval cathedral, Jewish Quarter
+- World-class dining (El Celler de Can Roca — #1 restaurant in the world multiple times)
+- Game of Thrones filming locations (Braavos = Girona!)
+- Excellent food market, cafés, independent shops
+- Easy drive back to Barcelona airport (1 hr) for departure</p>
+<hr />
+<h2>📅 Suggested 7-Night Itinerary</h2>
+<h3>Day 1 — Wednesday, July 23</h3>
+<p><strong>✈️ Fly JFK → Barcelona</strong>
+- Depart JFK ~5:10 PM on AA66
+- Overnight flight (sleep on the plane!)</p>
+<h3>Day 2 — Thursday, July 24</h3>
+<p><strong>🏙️ Arrive Barcelona — explore the city</strong>
+- Arrive BCN ~6:45 AM; check into hotel (early check-in or drop bags)
+- Morning: Walk Las Ramblas, Boqueria Market, Gothic Quarter
+- Afternoon: Relax, nap, rooftop pool
+- Evening: Dinner in Born neighbourhood or waterfront; cocktails on hotel rooftop
+- 🏨 <strong>Stay: Hotel Serras Barcelona</strong> (or Mercer/Wittmore)</p>
+<h3>Day 3 — Friday, July 25</h3>
+<p><strong>🏙️ Barcelona Day 2 — Gaudí &amp; beach</strong>
+- Morning: Sagrada Familia (book tickets in advance!), Park Güell
+- Afternoon: Barceloneta beach; lunch at a chiringuito (beach restaurant)
+- Evening: Pick up rental car OR save for tomorrow morning
+- Late: Tapas in El Born; evening stroll
+- 🏨 <strong>Stay: Hotel Serras Barcelona</strong></p>
+<h3>Day 4 — Saturday, July 26</h3>
+<p><strong>🚗 Drive to Tossa de Mar (1 hr)</strong>
+- Morning: Pick up rental car; drive the scenic coastal road (GI-682 is gorgeous!)
+- Check into Elisabeth by the Sea
+- Afternoon: Explore the medieval walled town; swim at Platja Gran
+- Evening: Dinner in the Old Town with castle views; sunset walk along the walls
+- 🏨 <strong>Stay: Elisabeth by the Sea, Tossa de Mar</strong></p>
+<h3>Day 5 — Sunday, July 27</h3>
+<p><strong>🏖️ Tossa de Mar — beaches &amp; coves</strong>
+- Morning: Hike the Camí de Ronda coastal path to Cala Pola (beautiful cove, ~30 min walk)
+- Midday: Swim, snorkel, relax at the cove
+- Afternoon: Back to hotel pool; or drive to Cala Giverola (another stunning cove)
+- Evening: Seafood dinner at a beachfront restaurant; evening drinks
+- 🏨 <strong>Stay: Elisabeth by the Sea, Tossa de Mar</strong></p>
+<h3>Day 6 — Monday, July 28</h3>
+<p><strong>🚗 Drive north to Baix Empordà (1 hr)</strong>
+- Morning: Drive north via the coastal road; optional stop at Calella de Palafrugell for coffee &amp; a stroll
+- Check into Mas de Torrent
+- Afternoon: Pool &amp; spa day at the hotel; bike ride through olive groves
+- Evening: Drive to Peratallada (10 min) — romantic dinner in the medieval walled village
+- 🏨 <strong>Stay: Mas de Torrent</strong></p>
+<h3>Day 7 — Tuesday, July 29</h3>
+<p><strong>🏖️ Coves &amp; villages — the best day</strong>
+- Morning: Drive to Begur → hike down to Sa Tuna cove (stunning!); swim in turquoise water
+- Midday: Lunch at a chiringuito in Tamariu or Aiguablava
+- Afternoon: Explore Pals medieval village (10 min from hotel); or return to hotel pool/spa
+- Evening: Dinner at Mas de Torrent's gourmet restaurant; stargazing from the terrace
+- 🏨 <strong>Stay: Mas de Torrent</strong></p>
+<h3>Day 8 — Wednesday, July 30</h3>
+<p><strong>🚗 Drive to Girona (30 min) — final night</strong>
+- Morning: Sleep in; leisurely checkout from Mas de Torrent
+- Late morning: Drive to Girona; check into Hotel Palau Fugit
+- Afternoon: Explore Girona — cathedral, Jewish Quarter, colourful houses on the Onyar river, Plaça de la Independència
+- Evening: Final celebration dinner — try for El Celler de Can Roca (book months ahead!) or one of Girona's many excellent restaurants (Rocambolesc for Roca brothers' ice cream!)
+- 🏨 <strong>Stay: Hotel Palau Fugit, Girona</strong></p>
+<h3>Day 9 — Thursday, July 31</h3>
+<p><strong>✈️ Fly home</strong>
+- Morning: Breakfast at Palau Fugit; browse Girona's morning market
+- Drive to Barcelona airport (1 hr) — return rental car
+- Fly home (check AA return flights — likely afternoon departure)</p>
+<hr />
+<h2>💰 Budget Estimate (7 nights)</h2>
+<table>
+<thead>
+<tr>
+<th>Night</th>
+<th>Hotel</th>
+<th>Est. Cost/Night</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hotel Serras Barcelona</td>
+<td>€400</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hotel Serras Barcelona</td>
+<td>€400</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Elisabeth by the Sea, Tossa</td>
+<td>€280</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Elisabeth by the Sea, Tossa</td>
+<td>€280</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Mas de Torrent</td>
+<td>€600</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Mas de Torrent</td>
+<td>€600</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Hotel Palau Fugit, Girona</td>
+<td>€350</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Total accommodation</strong></td>
+<td><strong>~€2,910</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Other costs:</strong>
+- Rental car (7 days): ~€300–500
+- Gas: ~€100
+- Dining out (7 dinners): ~€500–800
+- Activities/entrance fees: ~€100–200</p>
+<p><strong>Estimated total trip (excl. flights): ~€3,900–4,400</strong></p>
+<hr />
+<h2>🤔 Notes &amp; Alternatives</h2>
+<h3>On Meliá Lloret de Mar</h3>
+<p>I've included it in the hotel list for completeness, but honestly: <strong>Lloret de Mar is the weakest town on this route for a honeymoon.</strong> It's more of a mass-tourism/party beach resort. The Meliá is nice and well-priced, but the town doesn't match the romance of Tossa, Begur, or the Baix Empordà villages. </p>
+<p><strong>My suggestion:</strong> Skip Lloret and spend that night either:
+- An extra night in Tossa de Mar (more cove exploring)
+- An extra night at Mas de Torrent (more villages, spa, coves)
+- Or stop in Calella de Palafrugell instead (Hotel Alàbriga or a boutique option)</p>
+<h3>Alternative Luxury Options</h3>
+<p>If you want to level up beyond your listed hotels:
+- <strong>Hostal de la Gavina</strong> (S'Agaró) — Grand dame 5-star on a private beach; €400–700/night
+- <strong>Hotel Alàbriga</strong> (Sant Feliu de Guíxols) — Modern 5-star with rooftop pool, beach club; €300–500/night
+- <strong>Hotel Cala del Pi</strong> (Platja d'Aro) — Adults-only, secluded cove, romantic; €250–400/night
+- <strong>Cap Roig</strong> (Platja d'Aro area) — Boutique hotel near the botanical gardens</p>
+<h3>Extending to 8 nights?</h3>
+<p>Add a night in <strong>Cadaqués</strong> (the northernmost gem — Dalí's village, whitewashed, stunning). Or add a 3rd night at Mas de Torrent to fully explore the coves.</p>
+<hr />
+<h2>🌤️ Late July Weather — Costa Brava</h2>
+<ul>
+<li>Average highs: 28–31°C (82–88°F) — slightly cooler than the Balearics!</li>
+<li>Sea temperature: 23–25°C (warm enough for swimming)</li>
+<li>Rain: Very rare; 1–2 brief afternoon showers possible</li>
+<li>Sunset: ~9:20 PM (incredibly long golden evenings)</li>
+<li>UV: High — bring sunscreen for beach/hiking days</li>
+<li>⚠️ Peak season — book restaurants in advance, arrive at beaches early</li>
+</ul>
+<hr />
+<h2>🍽️ Don't Miss — Food &amp; Drink</h2>
+<ul>
+<li><strong>El Celler de Can Roca</strong> (Girona) — 3 Michelin stars, often #1 restaurant in the world. Book months ahead!</li>
+<li><strong>Peratallada</strong> — Entire medieval village is full of romantic restaurants</li>
+<li><strong>Calella de Palafrugell</strong> — Seafood right on the beach at sunset</li>
+<li><strong>Tossa de Mar</strong> — Fish restaurants in the Old Town with castle views</li>
+<li><strong>Vermouth hour</strong> — The Catalan tradition of pre-lunch vermouth + olives at a harbourside café</li>
+<li><strong>Pa amb tomàquet</strong> — Catalan tomato bread (you'll eat it every day and love it)</li>
+<li><strong>Cava</strong> — Catalan sparkling wine; cheaper and often better than champagne</li>
+<li><strong>Suquet de peix</strong> — Classic Costa Brava fish stew</li>
+</ul>
+<hr />
+<p><em>Last updated: July 2026</em></p>
+</body>
+</html>
