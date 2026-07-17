@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🏖️ Honeymoon Hotel Comparison — Balearic Islands</title>
+<title>🚗 Costa Brava Honeymoon Road Trip — Itinerary & Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   :root {
-    --mallorca: #2563eb;
-    --menorca: #059669;
-    --ibiza: #d97706;
+    --accent: #be185d;
     --bg: #fafaf9;
     --card-bg: #fff;
     --text: #1c1917;
     --muted: #78716c;
     --border: #e7e5e4;
-    --accent: #be185d;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -22,139 +21,80 @@
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
+  }
+  /* Map section */
+  .map-section { position: relative; }
+  #map { height: 55vh; min-height: 400px; width: 100%; border-bottom: 3px solid var(--accent); }
+  .map-header {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 1000;
+    background: linear-gradient(to bottom, rgba(30,41,59,0.85), transparent);
+    color: #fff; padding: 1.25rem 2rem;
+    pointer-events: none;
+  }
+  .map-header h1 { font-size: 1.6rem; }
+  .map-header p { opacity: 0.8; font-size: 0.9rem; }
+
+  /* Content section */
+  .content {
     max-width: 960px;
     margin: 0 auto;
     padding: 2rem 1.5rem 4rem;
   }
-  h1 {
-    font-size: 2rem;
-    color: var(--accent);
-    margin-bottom: 0.25rem;
-    border-bottom: 3px solid var(--accent);
-    padding-bottom: 0.5rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-    color: var(--text);
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 2px solid var(--border);
-  }
-  h3 {
-    font-size: 1.25rem;
-    margin-top: 2.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--text);
-  }
-  /* Island section headers */
-  h2:has(+ blockquote) {
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border-bottom: none;
-  }
-
+  h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.25rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; }
+  h2 { font-size: 1.5rem; color: var(--text); margin-top: 3rem; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+  h3 { font-size: 1.25rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+  h4 { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--accent); }
   p { margin-bottom: 1rem; }
   strong { color: var(--text); }
-
   blockquote {
-    background: #fef3c7;
-    border-left: 4px solid var(--ibiza);
-    padding: 1rem 1.25rem;
-    margin: 1rem 0 1.5rem;
-    border-radius: 0 8px 8px 0;
-    font-size: 0.95rem;
+    background: #fef3c7; border-left: 4px solid #d97706;
+    padding: 1rem 1.25rem; margin: 1rem 0 1.5rem;
+    border-radius: 0 8px 8px 0; font-size: 0.95rem;
   }
   blockquote p { margin-bottom: 0.5rem; }
   blockquote p:last-child { margin-bottom: 0; }
-
-  hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2rem 0;
-  }
-
-  /* Tables */
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0 1.5rem;
-    font-size: 0.9rem;
-    background: var(--card-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem;
+    font-size: 0.9rem; background: var(--card-bg); border-radius: 8px;
+    overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
-  thead {
-    background: linear-gradient(135deg, #1e293b, #334155);
-    color: #fff;
-  }
-  th {
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-  td {
-    padding: 0.6rem 1rem;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
+  thead { background: linear-gradient(135deg, #1e293b, #334155); color: #fff; }
+  th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
   tr:last-child td { border-bottom: none; }
   tbody tr:hover { background: #f5f5f4; }
-
-  /* Empty separator rows in comparison table */
-  td:empty { padding: 0.2rem; background: var(--bg); }
-
-  /* Lists */
-  ul {
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  li {
-    margin-bottom: 0.4rem;
-  }
-
-  /* Star ratings */
-  .star { color: #f59e0b; }
-
-  /* Responsive */
+  ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.4rem; }
+  code { background: #f5f5f4; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+  pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+  pre code { background: none; padding: 0; color: inherit; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  em:last-child { display: block; text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
   @media (max-width: 768px) {
-    body { padding: 1rem; }
-    h1 { font-size: 1.5rem; }
-    table { font-size: 0.8rem; display: block; overflow-x: auto; white-space: nowrap; }
+    .content { padding: 1rem; }
+    table { font-size: 0.8rem; display: block; overflow-x: auto; }
     th, td { padding: 0.5rem 0.6rem; }
+    #map { height: 40vh; min-height: 300px; }
   }
-
-  /* Print */
   @media print {
-    body { max-width: 100%; padding: 0; }
-    h2, h3 { page-break-after: avoid; }
-    table { page-break-inside: avoid; }
-  }
-
-  /* Hotel cards styling */
-  h3 + p {
-    color: var(--muted);
-    font-style: italic;
-    margin-bottom: 1rem;
-  }
-
-  /* Footer */
-  em:last-child {
-    display: block;
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
+    .map-section { display: none; }
+    .content { max-width: 100%; padding: 0; }
   }
 </style>
 </head>
 <body>
+
+<div class="map-section">
+  <div class="map-header">
+    <h1>🚗 Costa Brava Road Trip</h1>
+    <p>Barcelona → Tossa de Mar → Baix Empordà → Girona | July 23–30, 2026</p>
+  </div>
+  <div id="map"></div>
+</div>
+
+<div class="content">
 <h1>🚗 Costa Brava Honeymoon Road Trip</h1>
 <p><strong>Dates:</strong> July 23–30, 2026 (7 nights) | <strong>Route:</strong> Barcelona → up the Costa Brava coast → Girona | <strong>Style:</strong> Beach towns, great food, exploring, relaxation</p>
 <hr />
@@ -569,5 +509,120 @@
 </ul>
 <hr />
 <p><em>Last updated: July 2026</em></p>
+<hr />
+<h2>🗺️ Local Tips &amp; Hidden Gems</h2>
+<p><em>Curated from local travel guides</em></p>
+<h3>Must-Visit Coves &amp; Beaches (by area)</h3>
+<p><strong>Near Tossa de Mar:</strong>
+- <strong>Cala Pola</strong> — Secluded turquoise cove, 30-min walk on Camí de Ronda from Tossa. Quieter than the main beach. Dramatic cliffs.
+- <strong>Cala Bona</strong> — Even more secluded, perfect for those seeking total quiet
+- <strong>Platja Gran</strong> — Main beach below the castle walls; ideal for sunbathing with a view</p>
+<p><strong>Near Begur / Baix Empordà (best beaches on the coast!):</strong>
+- <strong>Sa Tuna</strong> — Small fishing cove with a great restaurant (Sa Tuna Restaurant at Hotel Sa Tuna). Crystal water, rocky coastline. <em>Top pick!</em>
+- <strong>Aiguablava</strong> — Turquoise bay, easy swimming, one of the most photogenic spots on Costa Brava
+- <strong>Platja Fonda</strong> — Steep stairs down but worth it for crystal-clear water. Bring shade &amp; snacks (no facilities)
+- <strong>D'Aigufreda</strong> — Walk from Sa Tuna along the coast; wonderful views the whole way
+- <strong>Tamariu</strong> — Tiny cove, great lunch spot, clear water
+- <strong>El Golfet, Canadell &amp; Port Pelegrí</strong> (Calella de Palafrugell) — Series of small beaches ideal for swimming and snorkeling</p>
+<h3>Villages Not to Miss</h3>
+<ul>
+<li><strong>Peratallada</strong> — Walled medieval village frozen in time; cobblestone streets, arched doorways. The entire village is a romantic dinner destination. ~10 min from Mas de Torrent.</li>
+<li><strong>Pals</strong> — Perfectly preserved medieval hill village with panoramic views; rice paddies below. Great independent shops and restaurants.</li>
+<li><strong>Calella de Palafrugell</strong> — White-washed fishing village with colourful boats pulled up on small beaches. Walk the Camí de Ronda coastal path to Llafranc.</li>
+<li><strong>Cadaqués</strong> (if extending to 8 days) — Salvador Dalí's whitewashed village at the tip of Cap de Creus. Artistic, bohemian, stunning. Worth the drive north.</li>
+</ul>
+<h3>Experiences &amp; Activities</h3>
+<ul>
+<li>🎨 <strong>Salvador Dalí Theatre-Museum</strong> (Figueres, 45 min from Girona) — Surreal, unforgettable. A must for art lovers.</li>
+<li>🌿 <strong>Marimurtra Botanical Garden</strong> (Blanes) — Stunning terraced gardens overlooking the coast; 16 hectares of Mediterranean and exotic flora.</li>
+<li>🏰 <strong>Begur Castle</strong> — 11th-century ruins atop the hill; panoramic 360° views of the coast. Best at sunset.</li>
+<li>🚶 <strong>Camí de Ronda</strong> — Ancient coastal patrol path; walk sections between coves (Sa Tuna → D'Aigufreda; Calella → Llafranc; Tossa → Cala Pola)</li>
+<li>🍷 <strong>Wine tasting</strong> — Empordà wine region; DO Empordà wineries near Peratallada/Pals</li>
+<li>🧀 <strong>Local markets</strong> — Begur (Wednesday), Palafrugell (Sunday &amp; Tuesday), Girona (Saturday)</li>
+</ul>
+<h3>Driving Tips</h3>
+<ul>
+<li>Pick up the rental car in Barcelona (airport or city) — both are easy</li>
+<li>The <strong>GI-682 coastal road</strong> from Tossa to Sant Feliu is one of Spain's most scenic drives (winding cliffs!)</li>
+<li>Parking in small coastal towns can be challenging in July — <strong>arrive at beaches before 10 AM</strong></li>
+<li>Most coves have paid parking lots nearby (€5-8/day)</li>
+<li>Begur to its coves (Sa Tuna, Aiguablava) = narrow winding roads; take it slow</li>
+<li>Total driving for the trip is minimal — longest single segment is Barcelona → Tossa (1 hr on the AP-7 motorway)</li>
+</ul>
+<hr />
+<p><em>References: <a href="https://www.bontraveler.com/where-to-visit-in-costa-brava-spain/">Bon Traveler — Where to Visit in Costa Brava</a> | <a href="https://www.followingmycompass.com/costa-brava-travel-guide/">Following My Compass — Costa Brava Travel Guide</a></em></p>
+</div>
+
+<script>
+const map = L.map('map').setView([41.85, 2.95], 9);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors', maxZoom: 18
+}).addTo(map);
+
+function makeIcon(color, size) {
+  return L.divIcon({
+    className: 'custom-marker',
+    html: `<div style="background:${color};width:${size}px;height:${size}px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>`,
+    iconSize: [size, size], iconAnchor: [size/2, size/2], popupAnchor: [0, -size/2]
+  });
+}
+const hotelIcon = makeIcon('#be185d', 20);
+const townIcon = makeIcon('#2563eb', 14);
+const coveIcon = makeIcon('#059669', 12);
+const airportIcon = makeIcon('#6b7280', 16);
+
+const hotels = [
+  { name: "Hotel Serras — Barcelona", detail: "Nights 1-2 | Waterfront boutique, rooftop pool", lat: 41.3784, lng: 2.1816 },
+  { name: "Elisabeth by the Sea — Tossa de Mar", detail: "Nights 3-4 | Beachfront, medieval Old Town", lat: 41.7193, lng: 2.9313 },
+  { name: "Mas de Torrent — Baix Empordà", detail: "Nights 5-6 | Relais & Châteaux countryside luxury", lat: 41.9700, lng: 3.1300 },
+  { name: "Hotel Palau Fugit — Girona", detail: "Night 7 | Baroque palace, Jewish Quarter", lat: 41.9879, lng: 2.8247 }
+];
+const towns = [
+  { name: "Calella de Palafrugell", detail: "White-washed fishing village; Camí de Ronda", lat: 41.8880, lng: 3.1870 },
+  { name: "Begur", detail: "Hilltop castle town; Sa Tuna & Aiguablava coves", lat: 41.9540, lng: 3.2070 },
+  { name: "Pals", detail: "Medieval walled village", lat: 41.9710, lng: 3.1480 },
+  { name: "Peratallada", detail: "Romantic medieval dinner village", lat: 41.9850, lng: 3.0950 },
+  { name: "Sant Feliu de Guíxols", detail: "Seaside town; near S'Agaró", lat: 41.7830, lng: 3.0290 },
+  { name: "Cadaqués", detail: "Dalí's whitewashed village (optional day trip)", lat: 42.2885, lng: 3.2765 },
+  { name: "Figueres", detail: "Dalí Theatre-Museum", lat: 42.2660, lng: 2.9620 }
+];
+const coves = [
+  { name: "Sa Tuna", detail: "Turquoise cove below Begur — top pick!", lat: 41.9620, lng: 3.2210 },
+  { name: "Tamariu", detail: "Tiny perfect cove; lunch spot", lat: 41.9180, lng: 3.2100 },
+  { name: "Aiguablava", detail: "Crystal-clear turquoise bay", lat: 41.9350, lng: 3.2170 },
+  { name: "Platja Fonda", detail: "Steep stairs, crystal water, secluded", lat: 41.9500, lng: 3.2150 },
+  { name: "Cala Pola", detail: "30-min hike from Tossa; dramatic cliffs", lat: 41.7320, lng: 2.9490 },
+  { name: "Platja Gran (Tossa)", detail: "Main beach below the castle walls", lat: 41.7175, lng: 2.9330 },
+  { name: "Barceloneta Beach", detail: "Barcelona city beach", lat: 41.3780, lng: 2.1920 },
+  { name: "El Golfet (Calella)", detail: "Small cove, great snorkeling", lat: 41.8840, lng: 3.1910 }
+];
+
+L.marker([41.2971, 2.0785], {icon: airportIcon}).addTo(map).bindPopup("<strong>✈️ BCN Airport</strong><br>Start & end");
+hotels.forEach(h => L.marker([h.lat, h.lng], {icon: hotelIcon}).addTo(map).bindPopup(`<strong>🏨 ${h.name}</strong><br>${h.detail}`));
+towns.forEach(t => L.marker([t.lat, t.lng], {icon: townIcon}).addTo(map).bindPopup(`<strong>🏘️ ${t.name}</strong><br>${t.detail}`));
+coves.forEach(c => L.marker([c.lat, c.lng], {icon: coveIcon}).addTo(map).bindPopup(`<strong>🏖️ ${c.name}</strong><br>${c.detail}`));
+
+L.polyline([
+  [41.2971, 2.0785], [41.3784, 2.1816], [41.7193, 2.9313],
+  [41.7830, 3.0290], [41.8880, 3.1870], [41.9540, 3.2070],
+  [41.9700, 3.1300], [41.9879, 2.8247], [41.2971, 2.0785]
+], { color: '#be185d', weight: 3, opacity: 0.7, dashArray: '8, 8' }).addTo(map);
+
+const allCoords = [...hotels.map(h=>[h.lat,h.lng]),...towns.map(t=>[t.lat,t.lng]),...coves.map(c=>[c.lat,c.lng]),[41.2971,2.0785]];
+map.fitBounds(allCoords, { padding: [30, 30] });
+
+const legend = L.control({position: 'bottomright'});
+legend.onAdd = function() {
+  const div = L.DomUtil.create('div');
+  div.style.cssText = 'background:#fff;padding:10px 14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.15);font-size:13px;line-height:1.8;';
+  div.innerHTML = `<strong>Legend</strong><br>
+    <span style="display:inline-block;width:12px;height:12px;background:#be185d;border-radius:50%;margin-right:6px;vertical-align:middle;"></span> Hotels<br>
+    <span style="display:inline-block;width:12px;height:12px;background:#2563eb;border-radius:50%;margin-right:6px;vertical-align:middle;"></span> Towns<br>
+    <span style="display:inline-block;width:12px;height:12px;background:#059669;border-radius:50%;margin-right:6px;vertical-align:middle;"></span> Beaches & coves<br>
+    <span style="color:#be185d;">- - -</span> Driving route`;
+  return div;
+};
+legend.addTo(map);
+</script>
 </body>
 </html>
