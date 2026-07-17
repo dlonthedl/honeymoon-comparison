@@ -62,6 +62,7 @@
   .legend { position: absolute; bottom: 20px; left: 20px; z-index: 1000; background: rgba(255,255,255,0.95); padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .legend-item { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
   .legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .hotel-label { background: #be185d; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.3); }
 </style>
 </head>
 <body>
@@ -73,10 +74,12 @@
   </div>
   <div id="map"></div>
   <div class="legend">
-    <div class="legend-item"><div class="legend-dot" style="background:#ec4899"></div> Hotels</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Towns</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#ec4899"></div> Your Hotels (labeled)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Towns & Day Trips</div>
     <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Coves & Beaches</div>
     <div class="legend-item"><div class="legend-dot" style="background:#6b7280"></div> Airport</div>
+    <div class="legend-item"><span style="color:#ec4899;font-weight:bold">- - -</span> Main route</div>
+    <div class="legend-item"><span style="color:#3b82f6;font-weight:bold">- - -</span> Cadaqués day trip</div>
   </div>
 </div>
 
@@ -124,48 +127,37 @@
 <p>Total driving: ~4 hrs end-to-end (spread over the trip with scenic coastal roads)</p>
 <hr />
 <h2>🏨 Your Hotels</h2>
-<h3>1. Barcelona — First 1-2 nights (arrival/city exploring)</h3>
-<p><strong>Suggested:</strong> Hotel Serras Barcelona or Mercer Hotel Barcelona</p>
+<h3>1. Hotel Serras Barcelona — Nights 1-2</h3>
+<p><strong>Contemporary waterfront boutique</strong> | <a href="https://www.hotelserrasbarcelona.com/">hotelserrasbarcelona.com</a></p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Hotel Serras</th>
-<th>Mercer Hotel</th>
+<th>Category</th>
+<th>Details</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Location</strong></td>
 <td>Waterfront, Port Vell / Gothic Quarter edge</td>
-<td>Deep Gothic Quarter, quiet medieval street</td>
 </tr>
 <tr>
 <td><strong>Style</strong></td>
 <td>Contemporary boutique; rooftop pool with marina views</td>
-<td>Medieval palace; plunge pool in courtyard</td>
-</tr>
-<tr>
-<td><strong>Price (July)</strong></td>
-<td>€350–500/night</td>
-<td>€400–600/night</td>
-</tr>
-<tr>
-<td><strong>Best for</strong></td>
-<td>Sea views + city access</td>
-<td>History buffs + total intimacy</td>
 </tr>
 <tr>
 <td><strong>Dining</strong></td>
 <td>Rooftop restaurant + bar</td>
-<td>Courtyard restaurant</td>
+</tr>
+<tr>
+<td><strong>Price (July)</strong></td>
+<td>€350–500/night</td>
 </tr>
 </tbody>
 </table>
-<p><em>Or: Wittmore Hotel (adults-only, hidden Gothic Quarter gem, €300–450)</em></p>
 <hr />
-<h3>2. Elisabeth by the Sea — Tossa de Mar</h3>
-<p><strong>Beachfront boutique, Old Town location</strong></p>
+<h3>2. Elisabeth by the Sea — Tossa de Mar — Nights 3-4</h3>
+<p><strong>Beachfront boutique, Old Town location</strong> | <a href="https://www.hotelelisabeth.com/">hotelelisabeth.com</a></p>
 <table>
 <thead>
 <tr>
@@ -194,10 +186,6 @@
 <td><strong>Price (July)</strong></td>
 <td>€180–320/night</td>
 </tr>
-<tr>
-<td><strong>Rating</strong></td>
-<td>Strong 4-star; praised for location, breakfast, staff</td>
-</tr>
 </tbody>
 </table>
 <p><strong>Why Tossa de Mar?</strong>
@@ -206,51 +194,8 @@
 - Crystal-clear coves nearby (Cala Pola, Cala Giverola — hike or drive)
 - Romantic evening strolls along the castle walls at sunset</p>
 <hr />
-<h3>3. Meliá Lloret de Mar — Lloret de Mar</h3>
-<p><strong>Modern resort with pools and spa</strong></p>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Location</strong></td>
-<td>Quiet area of Lloret, 10-15 min walk to main beach</td>
-</tr>
-<tr>
-<td><strong>Rooms</strong></td>
-<td>Modern, spacious; "The Level" premium floor with exclusive services</td>
-</tr>
-<tr>
-<td><strong>Dining</strong></td>
-<td>Buffet breakfast; poolside dining; restaurants in town</td>
-</tr>
-<tr>
-<td><strong>Pool &amp; Spa</strong></td>
-<td>2 pools, sun terrace, spa, gym</td>
-</tr>
-<tr>
-<td><strong>Price (July)</strong></td>
-<td>€90–150/night</td>
-</tr>
-<tr>
-<td><strong>Rating</strong></td>
-<td>4/5; great value; modern and well-maintained</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Why Lloret de Mar?</strong>
-- Lively beach town — longest beach on this stretch of coast
-- Good base for exploring nearby coves (Santa Cristina beach is gorgeous)
-- Water sports, nightlife options, beach clubs
-- Gardens of Santa Clotilde (clifftop gardens with sea views)</p>
-<p><strong>⚠️ Honest note:</strong> Lloret is the most "touristy" and party-oriented town on the Costa Brava. The Meliá is in a quieter spot, but the town itself is less romantic/upscale than Tossa or the northern towns. Consider whether you want this stop or prefer more time in Tossa/north.</p>
-<hr />
-<h3>4. Mas de Torrent Hotel &amp; Spa — Torrent (Baix Empordà)</h3>
-<p><strong>5-star Relais &amp; Châteaux countryside luxury</strong></p>
+<h3>3. Mas de Torrent Hotel &amp; Spa — Nights 5-7</h3>
+<p><strong>5-star Relais &amp; Châteaux countryside luxury</strong> | <a href="https://www.mastorrent.com/">mastorrent.com</a></p>
 <table>
 <thead>
 <tr>
@@ -279,10 +224,6 @@
 <td><strong>Price (July)</strong></td>
 <td>€465–755/night (suites with pools up to €1,145)</td>
 </tr>
-<tr>
-<td><strong>Rating</strong></td>
-<td>4.6–4.7/5; "unforgettable luxury experience"</td>
-</tr>
 </tbody>
 </table>
 <p><strong>Why Mas de Torrent / Baix Empordà?</strong>
@@ -294,8 +235,8 @@
 - Tamariu (25 min) — tiny turquoise cove, lunch spot
 - Private boat excursions, cooking classes, wine tasting all arranged by hotel</p>
 <hr />
-<h3>5. Hotel Palau Fugit — Girona</h3>
-<p><strong>Boutique palace hotel in the Old Town</strong></p>
+<h3>4. Hotel Palau Fugit — Girona — Nights 8-9</h3>
+<p><strong>Boutique palace hotel in the Old Town</strong> | <a href="https://www.palaufugit.com/">palaufugit.com</a></p>
 <table>
 <thead>
 <tr>
@@ -323,10 +264,6 @@
 <tr>
 <td><strong>Price (July)</strong></td>
 <td>€250–500/night</td>
-</tr>
-<tr>
-<td><strong>Rating</strong></td>
-<td>4.5/5 TripAdvisor; 9.3/10 booking sites</td>
 </tr>
 </tbody>
 </table>
@@ -483,20 +420,26 @@
 <p><strong>Estimated total trip (excl. flights): ~€5,200–5,800</strong></p>
 <hr />
 <h2>🤔 Notes &amp; Alternatives</h2>
-<h3>On Meliá Lloret de Mar</h3>
-<p>I've included it in the hotel list for completeness, but honestly: <strong>Lloret de Mar is the weakest town on this route for a honeymoon.</strong> It's more of a mass-tourism/party beach resort. The Meliá is nice and well-priced, but the town doesn't match the romance of Tossa, Begur, or the Baix Empordà villages. </p>
-<p><strong>My suggestion:</strong> Skip Lloret and spend that night either:
-- An extra night in Tossa de Mar (more cove exploring)
-- An extra night at Mas de Torrent (more villages, spa, coves)
-- Or stop in Calella de Palafrugell instead (Hotel Alàbriga or a boutique option)</p>
-<h3>Alternative Luxury Options</h3>
-<p>If you want to level up beyond your listed hotels:
-- <strong>Hostal de la Gavina</strong> (S'Agaró) — Grand dame 5-star on a private beach; €400–700/night
-- <strong>Hotel Alàbriga</strong> (Sant Feliu de Guíxols) — Modern 5-star with rooftop pool, beach club; €300–500/night
-- <strong>Hotel Cala del Pi</strong> (Platja d'Aro) — Adults-only, secluded cove, romantic; €250–400/night
-- <strong>Cap Roig</strong> (Platja d'Aro area) — Boutique hotel near the botanical gardens</p>
-<h3>Extending to 8 nights?</h3>
-<p>Add a night in <strong>Cadaqués</strong> (the northernmost gem — Dalí's village, whitewashed, stunning). Or add a 3rd night at Mas de Torrent to fully explore the coves.</p>
+<h3>Day Trip to Cadaqués (Day 8)</h3>
+<p>Cadaqués is 1 hr 15 min from Mas de Torrent via Figueres. It's a full but rewarding day — you can stop at the Dalí Theatre-Museum in Figueres on the way, then explore the village, visit Portlligat, and drive to Cap de Creus. Leave early to make the most of it. Book Dalí's house-museum tickets well in advance (limited capacity).</p>
+<h3>On Barcelona Hotels</h3>
+<p>We chose <strong>Hotel Serras</strong> for its rooftop pool with marina views and walkability to the Gothic Quarter. Other strong options if Serras is unavailable:
+- <strong>Mercer Hotel Barcelona</strong> — Medieval palace in the Gothic Quarter; more intimate, plunge pool (€400–600)
+- <strong>Wittmore Hotel</strong> — Adults-only, hidden gem in the Gothic Quarter (€300–450)</p>
+<h3>Alternative Luxury Options Along the Route</h3>
+<ul>
+<li><strong>Hostal de la Gavina</strong> (S'Agaró) — Grand dame 5-star on a private beach; €400–700/night</li>
+<li><strong>Hotel Alàbriga</strong> (Sant Feliu de Guíxols) — Modern 5-star with rooftop pool, beach club; €300–500/night</li>
+<li><strong>Hotel Cala del Pi</strong> (Platja d'Aro) — Adults-only, secluded cove, romantic; €250–400/night</li>
+</ul>
+<h3>Booking Tips</h3>
+<ul>
+<li><strong>El Celler de Can Roca</strong> (Girona) — Book 2+ months ahead; reservations open on the 1st of each month</li>
+<li><strong>Dalí House-Museum, Portlligat</strong> — Book online in advance; limited to small groups every 10 min</li>
+<li><strong>Sagrada Familia</strong> — Book timed tickets online (sells out in summer)</li>
+<li><strong>Mas de Torrent</strong> — Request a suite with private pool for extra honeymoon romance</li>
+<li><strong>Rental car</strong> — Book in advance for July; consider picking up at BCN airport on Day 4 morning (save 2 days of city parking)</li>
+</ul>
 <hr />
 <h2>🌤️ Late July Weather — Costa Brava</h2>
 <ul>
@@ -581,21 +524,30 @@ function icon(color, size) {
   });
 }
 
-// Hotels (pink)
+function hotelIcon(name) {
+  return L.divIcon({
+    html: '<div style="display:flex;align-items:center;gap:4px"><div style="background:#ec4899;width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);flex-shrink:0"></div><span class=\'hotel-label\'>'+name+'</span></div>',
+    iconSize: [200, 20],
+    iconAnchor: [7, 10],
+    className: ''
+  });
+}
+
+// Hotels (pink with labels)
 var hotels = [
-  [41.3784, 2.1816, "Hotel Serras — Barcelona", "Nights 1-2"],
-  [41.7193, 2.9313, "Elisabeth by the Sea — Tossa de Mar", "Nights 3-4"],
-  [41.9700, 3.1300, "Mas de Torrent — Baix Empordà", "Nights 5-7"],
-  [41.9879, 2.8247, "Hotel Palau Fugit — Girona", "Nights 8-9"]
+  [41.3784, 2.1816, "Hotel Serras", "Nights 1-2 — Barcelona"],
+  [41.7193, 2.9313, "Elisabeth by the Sea", "Nights 3-4 — Tossa de Mar"],
+  [41.9700, 3.1300, "Mas de Torrent", "Nights 5-7 — Baix Empordà"],
+  [41.9879, 2.8247, "Palau Fugit", "Nights 8-9 — Girona"]
 ];
 hotels.forEach(function(h) {
-  L.marker([h[0], h[1]], {icon: icon('#ec4899', 16)}).addTo(map)
+  L.marker([h[0], h[1]], {icon: hotelIcon(h[2])}).addTo(map)
     .bindPopup('<strong>'+h[2]+'</strong><br>'+h[3]);
 });
 
 // Towns (blue)
 var towns = [
-  [42.2885, 3.2765, "Cadaqués", "Day trip — Dalí's whitewashed village"],
+  [42.2885, 3.2765, "Cadaqués", "Day trip — Dalí\'s whitewashed village"],
   [41.9540, 3.2070, "Begur", "Hilltop town, castle ruins, gateway to best coves"],
   [41.8880, 3.1870, "Calella de Palafrugell", "White-washed fishing village"],
   [41.9900, 3.1600, "Pals", "Medieval hilltop village"],
@@ -613,8 +565,8 @@ var coves = [
   [41.9620, 3.2210, "Sa Tuna", "Crystal-clear fishing cove — top pick!"],
   [41.9420, 3.2150, "Aiguablava", "Turquoise bay — most photogenic"],
   [41.9050, 3.1900, "Tamariu", "Tiny cove, great lunch spot"],
-  [42.3200, 3.3100, "Cap de Creus", "Spain's easternmost point — wild coastline"],
-  [42.2950, 3.2850, "Portlligat", "Dalí's house-museum"]
+  [42.3200, 3.3100, "Cap de Creus", "Spain\'s easternmost point — wild coastline"],
+  [42.2950, 3.2850, "Portlligat", "Dalí\'s house-museum"]
 ];
 coves.forEach(function(c) {
   L.marker([c[0], c[1]], {icon: icon('#10b981', 10)}).addTo(map)
@@ -625,24 +577,24 @@ coves.forEach(function(c) {
 L.marker([41.2971, 2.0785], {icon: icon('#6b7280', 14)}).addTo(map)
   .bindPopup('<strong>BCN Airport</strong><br>Start & end point');
 
-// Main route line (pink)
+// Main route (pink dashed)
 var route = [
-  [41.2971, 2.0785], // airport
-  [41.3784, 2.1816], // Barcelona
-  [41.7193, 2.9313], // Tossa
-  [41.8880, 3.1870], // Calella
-  [41.9700, 3.1300], // Mas de Torrent
-  [41.9879, 2.8247], // Girona
-  [41.2971, 2.0785]  // airport
+  [41.2971, 2.0785],
+  [41.3784, 2.1816],
+  [41.7193, 2.9313],
+  [41.8880, 3.1870],
+  [41.9700, 3.1300],
+  [41.9879, 2.8247],
+  [41.2971, 2.0785]
 ];
 L.polyline(route, {color: '#ec4899', weight: 3, dashArray: '8,8', opacity: 0.7}).addTo(map);
 
-// Day trip to Cadaqués (dashed blue)
+// Cadaqués day trip (blue dashed)
 var dayTrip = [
-  [41.9700, 3.1300], // Mas de Torrent
-  [42.2670, 2.9600], // Figueres
-  [42.2885, 3.2765], // Cadaqués
-  [41.9700, 3.1300]  // back
+  [41.9700, 3.1300],
+  [42.2670, 2.9600],
+  [42.2885, 3.2765],
+  [41.9700, 3.1300]
 ];
 L.polyline(dayTrip, {color: '#3b82f6', weight: 2, dashArray: '5,10', opacity: 0.6}).addTo(map);
 </script>
